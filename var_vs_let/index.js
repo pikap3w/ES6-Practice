@@ -1,7 +1,11 @@
+//** VAR **//
+
 // var catName = "Quincy";
 // var quote;
 
-// var catName = "Beau";
+// var catName = "Beau"; // will not throw error even though variable already declared
+
+//** LET **//
 
 let catName = "Quincy";
 let quote;
@@ -17,3 +21,19 @@ function catTalk() {
 }
 
 catTalk();
+
+
+//** COMPARING SCOPES **//
+
+function checkScope() {
+  "use strict";
+  var i = "function scope";
+  if (true) {
+    i = "block scope";
+    console.log("Block scope i is: ", i);
+  }
+  console.log("Function scope i is: ", i);
+  return i;
+}
+
+checkScope();
